@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.devMode" value="false" />
+    <package name="default" namespace="/" extends="struts-default">
+
+    </package>
+    
+    <package name="defaultPackage" extends="struts-default">
+    	<!-- 定义发送错误请求连接是返回消息 -->
+    	<default-class-ref class="errorAction" />
+    	<global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+    	<action name="*"></action>
+    </package>
+   <!-- 登录 -->
+   <package name="userlogin" namespace="/" extends="struts-default" >
+		   <action name="9999" class="dbTest"></action><!-- 测试接口，用来同步数据或者测试数据库 -->
+		   <action name="101" class="loginAction"></action><!-- 登录 -->
+		   <action name="102" class="logOutAction"></action><!--注销 -->
+		   <action name="103" class="simplePointAction" ></action><!--单点登录，修改用户相关信息 -->
+		   <action name="104" class="simplePointAction" method="updateExpiresTime"></action><!-- 在线状态延迟+30分钟 -->
+		   <action name="105" class="simplePointAction" method="checkLoginState"></action><!-- 验证PC端MAC登录状态 -->
+		  
+		   <action name="111" class="activityMailBoxAction"></action><!-- 激活邮箱,验证邮箱验证码是否正确 -->
+		   <action name="112" class="vilidateAction" ></action><!-- 发送验证码到邮箱  -->
+		   <action name="113" class="findPasswordAction" method="sendCode"></action><!-- 忘记密码-手机验证 -->
+		   <action name="114" class="phoneAction" method="checkPhoneState"></action><!-- 判断手机验证状态 -->
+		   <action name="115" class="phoneAction" method="checkEmailState"></action><!-- 判断邮箱验证状态 -->
+		   <action name="116" class="phoneAction" method="sendValidCode"></action><!-- 发送验证码到手机 -->
+		   <action name="117" class="phoneAction" method="checkValidCode"></action><!-- 验证手机验证码是否正确 -->
+		   <action name="118" class="validateuserAction"></action> <!-- 验证用户唯一-->	
+		   <action name="119" class="emailSendAgain" ></action><!-- 再次发送邮箱验证 -->
+		   
+		   <action name="121" class="findPasswordAction" method="forgetPasswordForPhone"></action><!-- 忘记密码-手机验证码是否正确 -->
+		   <action name="122" class="findPasswordAction" method="forgetPasswordForEmail"></action><!-- 忘记密码-通过邮箱找回 -->
+		   <action name="123" class="findPasswordAction" method="checkEmail"></action><!-- 忘记密码-验证邮箱链接是否有效 -->
+		   <action name="124" class="findPasswordAction" method="resetPassword"></action><!-- 忘记密码-重置密码 -->
+    	   
+   </package>
+   <!-- 个人信息 -->
+   <package name="userinfo" namespace="/" extends="struts-default" >
+		   <action name="202" class="userInfoAction" method="getUserTopInfo"></action><!-- 顶部公共部分用户信息 -->
+		   <action name="203" class="userInfoAction" method="getUserHeadInfo"></action><!-- 用户主页头部信息 -->
+		   <action name="204" class="userInfoAction" method="getUserInfo"></action><!-- 获取个人基本信息 -->
+		   <action name="205" class="userInfoAction" method="findRoleFunction"></action><!-- 获取角色对应的功能-->
+		   <action name="206" class="userInfoAction" method="attentionState"></action><!-- 头像划过返回用户关注状态信息-->
+		   <action name="207" class="updateUserAction" ></action><!-- 修改个人与机构信息-->
+		   <action name="208" class="updateUserAction" method="updateInterest"></action><!-- 修改兴趣爱好接口-->
+		   <action name="209" class="userInfoAction" method="getVideoUrl"></action><!-- 获取视频id接口-->
+		   
+		   <action name="211" class="analystAction"></action><!-- 显示推荐分析师 -->
+		   <action name="212" class="analystAction" method="updateAnalystState"></action><!-- 修改偏好设置状态 -->
+		   <action name="213" class="analystAction" method="addAnalyst"></action><!-- 添加关注分析师 -->
+		   <action name="214" class="analystAction" method="addMoreAnalyst"></action><!-- 批量添加关注分析师 -->
+		   <action name="215" class="analystAction" method="showAllAnalyst"></action><!-- 显示所有分析师 -->
+		   <action name="216" class="analystAction" method="checkAttentionAnalystCount"></action><!-- 检查当前关注的分析师数量-->
+		   
+		   <action name="221" class="attentionAreaAction" method="attentionCountry"></action><!-- 关注(取消)国家，支持批量-->
+		   <action name="222" class="attentionAreaAction"></action><!-- 显示关注的国家(不需要关注状态)-->
+		   <action name="223" class="attentionAreaAction" method="showAttentionCountry"></action><!-- 显示关注的国家(需要关注状态)-->
+		   <action name="224" class="attentionCurrencyAction" method="attentionCurrency"></action><!-- 关注(取消)货币,支持批量-->
+		   <action name="225" class="attentionCurrencyAction"></action><!-- 显示关注货币，不显示关注状态-->
+		   <action name="226" class="attentionCurrencyAction" method="showAttentionCurrency"></action><!-- 显示关注货币，显示关注状态-->
+		   <action name="227" class="attentionAreaAction" method="attentionSimpleCountry"></action><!-- 关注(取消)国家，仅单个-->
+		   <action name="228" class="attentionCurrencyAction" method="attentionSimpleCurrency"></action><!-- 关注(取消)货币，仅单个-->
+		   <action name="231" class="headUploadAction"></action><!-- 头像上传 -->
+		   <action name="232" class="belongPlaceAction"></action><!-- 归属地查询 -->
+		   <action name="241" class="callInfo"></action><!-- 修改喊单公开权限 -->
+		   <action name="242" class="callInfo" method="updateAnalystAnnoun"></action><!-- 修改分析师公告 -->
+   </package>
+    <!-- blog信息 -->
+   <package name="blog" namespace="/" extends="struts-default" >
+		    <action name="301" class="blogWriterAction"></action><!-- 写博客(保存草稿箱调用相同的接口，更新博客也是同样的接口)-->
+		   	<action name="303" class="blogPraiseAction"></action><!-- 博客赞 -->
+		   	<action name="304" class="blogListAction"></action><!-- 博客列表 -->
+		  	<action name="306" class="blogDetailAction"></action><!-- 博客详细 -->
+		  	<action name="307" class="blogDeleteAction"></action><!-- 删除博客 -->
+		  	<action name="310" class="blogTypeAction"></action><!-- 博客类型列表 -->
+		  	<action name="311" class="blogTypeAction" method="showBlogType"></action><!-- 博客详细类型列表,写博客时显示博客分类列表 -->
+		    <action name="312" class="blogTypeAction" method="getDrafts"></action><!-- 返回博客草稿箱数量 -->
+		    <action name="315" class="blogListAction" method="newBlogList"></action><!-- 博客列表 -->
+		   	<action name="321" class="blogCommontWriterAction"></action><!-- 写博客评论 -->
+		   	<action name="324" class="blogCommontWriterAction" method="deleteComment"></action><!-- 删除博客评论 -->
+		   	<action name="326" class="blogCommontAction"></action><!-- 博客评论列表 (显示一级评论或者二级评论) -->
+		   	<action name="328" class="blogCommontAction" method="allCommontList"></action><!-- 博客评论列表 (显示一级和二级评论) -->
+		   	 
+		   	<!-- 沙龙区域块 -->
+		   	<action name="351" class="microBlogWriterAction" ></action><!-- 写微博 -->
+		   	<action name="352" class="microBlogWriterAction" method="publishView"></action><!-- 写观点或者策略秘笈 -->
+		   	<action name="353" class="microBlogDeleteAction" ></action><!--删除微博或者观点策略秘笈 -->
+		   	<action name="354" class="microCommentAction" ></action><!--写微博评论 -->
+		   	<action name="355" class="microCommentAction" method="deleteComment"></action><!--删除微博评论 -->
+		   	<action name="356" class="microPraiseAction"></action><!--微博赞接口 -->
+  	</package>
+  	 
+   <!-- 信息中心 -->
+   <package name="msginfo" namespace="/" extends="struts-default" >
+		   	 <action name="401" class="attentionListAction"></action><!--关注列表 -->
+		     <action name="402" class="fansListAction"></action><!--粉丝列表  -->
+		     <action name="403" class="blogPraiseListAction"></action><!--博客赞列表  -->
+		     <action name="404" class="blogCommentListAction"></action><!--博客评论列表 -->
+		     <action name="405" class="adviceAction"></action><!-- 获取通知列表 -->
+		     <action name="406" class="adviceAction" method="adviceDetail"></action><!-- 获取详细通知 -->
+		     <action name="407" class="flowListAction" ></action><!-- 获取分析师鲜花数-->
+		     <action name="408" class="flowListAction" method="addFlow"></action><!-- 赠送分析师鲜花-->
+		     <action name="409" class="flowListAction" method="topFlow"></action><!-- 鲜花榜-->
+		     <action name="410" class="rankAnalystAction" ></action><!-- 分析师排行榜-->
+		     <action name="411" class="rankAnalystAction" method="findAnalyst"></action><!-- 索引分析师-->
+		     <action name="412" class="rankAnalystAction" method="analystRoom"></action><!-- 分析师房间，显示分析师排行，是否在线等信息-->
+		     <action name="421" class="turnTableAction" ></action><!-- 转盘-->
+		     <action name="431" class="showArticleAction" ></action><!-- 定制数据-->
+		   	 <action name="432" class="showEcolomicAction"></action><!-- 定制资讯-->
+		   	 <action name="433" class="commentArticleAction"></action><!-- 专家评论资讯-->
+		   	 <action name="441" class="attentionListAction" method="attentionAnalyst"></action><!--关注分析师列表，仅支持IOS -->
+		   	 <action name="451" class="giftListAction"></action><!--礼物动态列表(包括好评，礼物，策略等) -->
+		   	 <action name="452" class="giftListAction" method="sendGift"></action><!--赠送礼物 -->
+		   	 <action name="453" class="giftListAction" method="giftList"></action><!--礼物列表(普通的礼物，鲜花，中华烟等可以赠送的礼物) -->
+		   	
+		   	 <action name="460" class="buyCircleAction" method="isBuyPlot"></action><!--是否购买策略服务-->
+		   	 <action name="461" class="buyCircleAction" ></action><!--购买策略服务 -->
+		   	 <action name="462" class="buyCircleAction" method="buyPlot"></action><!--购买策略与秘笈 -->
+		   	 <action name="463" class="plotList" ></action><!--策略与秘笈列表(动态块) -->
+		   	 <action name="464" class="accountList" ></action><!-- 赚到金币 -->
+		   	 <action name="465" class="accountList" method="consume"></action><!-- 我的购买 -->
+		   	 <action name="466" class="giftDetail" ></action><!-- 策略详情 -->
+		   	 <action name="467" class="giftDetail" method="getGiftDetail" ></action><!-- 礼物详情 -->
+		   	 <action name="471" class="analystExchangeRoom"  ></action><!-- 沙龙交流区发送消息-->
+		   	 <action name="472" class="analystExchangeRoom"  method="exchangeRecord"></action><!-- 答疑记录-->
+		   	 <action name="473" class="analystExchangeRoom"  method="answerQuestionCount"></action><!-- 今日未回答提问数目，今日回答提问数目，今日提问人数数目-->
+		   	 <action name="474" class="analystExchangeRoom"  method="unAnswerQuestion"></action><!-- 今日未回答的信息接口-->
+		   	 <action name="475" class="analystExchangeRoom"  method="userQuestion"></action><!-- 用户的提问以及回答的问题-->
+		   	 <action name="476" class="seniorAnalystApplyAction" method="apply"></action><!--高级分析师申请认证-->
+		   	 <action name="477" class="TacticsIsPassAction" method="invoke"></action><!--策略服务过期查询与提醒-->
+		   	 <action name="478" class="seniorAnalystApplyAction" method="getStatus"></action><!--高级分析师申请认证状态查询-->
+		   	 <action name="479" class="analystExchangeRoom"  method="findOldExchange"></action><!-- 网友交流列表-->
+		   	 <action name="481" class="analystExchangeRoom"  method="delQuestion"></action><!-- 删除问答-->
+   </package>
+     <package name="authenticate" namespace="/" extends="struts-default">
+     	<action name="501" class="analystAuthenticateAction"></action><!-- 机构认证 -->
+     	<action name="502" class="analystAuthenticateAction" method="analystAuthenticate"></action><!-- 分析师认证 -->
+     	<action name="505" class="analystAuthenticateResultAction"></action><!-- 认证结果 -->
+     	<action name="506" class="analystAuthenticateAction" method="checkAnalyst"></action><!-- 是否满足分析师认证条件判断 -->
+     	<action name="507" class="analystAuthenticateAction" method="checkOrgnation"></action><!-- 是否满足机构认证条件判断 -->
+     	<action name="508" class="analystAuthenticateAction" method="analystMessage"></action><!-- 重新提交获取分析师或者机构信息 -->
+     </package>
+    <!-- 状态改变 -->
+  	 <package name="userstate" namespace="/" extends="struts-default" >
+	    <action name="601" class="updateStateAction" method="getUserMessage"></action><!-- 获取通知变化数，赞数，评论数 -->
+		<action name="602" class="updateStateAction"></action><!-- 修改通知变化数，赞数，评论数,粉丝变动数-->
+		<action name="603" class="messageStateAction"></action><!-- 修改是否开通短信通知-->
+		<action name="611" class="dynamicLoad" ></action><!-- 动态 -->
+	    <action name="612" class="showAction"></action><!-- 约N条动态 -->
+   	</package>
+   <!-- APP信息 -->
+    <package name="appinfo" namespace="/" extends="struts-default" >
+		   	 <action name="701" class="registerAppAction"></action>
+		   	 <action name="702" class="appAnaAction"></action><!--手机APP个人信息编辑-->
+		   	 <action name="703" class="appOrgAction"></action><!-- 获取热图-->
+		   	 <action name="741" class="appOrgAction" method="findBlogHotPicture"></action><!-- APP机构商分类为APP信息的博客详细信息 -->
+		   	 <action name="742" class="appOrgAction" method="findBlogHotDetail"></action><!-- APP机构商最新的三篇博客图片 -->
+		   	 <action name="704" class="organizationAction"></action> <!--机构商列表-->
+		   	 <action name="705" class="organizationAction" method="belongOrgAnalyst"></action> <!--显示当前机构下的所属分析师-->
+		   	 <action name="706" class="organizationAction" method="uploadOrgLogo"></action> <!--上传机构商图片-->
+		  	 <action name="707" class="organizationAction" method="findOrgForAnalyst"></action> <!--获取当前分析师绑定的机构-->
+		     <action name="708" class="organizationAction" method="checkAnalystRegistState"></action> <!--检查分析师认证机构状态-->
+		  	 <action name="709" class="organizationAction" method="getLogo"></action> <!--机构商根据分析师ID取APPLOGO-->
+		  	
+		     <action name="711" class="analystPassAction" ></action><!-- 机构认证(通过，取消) -->
+		   	 <action name="712" class="organizationAction" method="chanelAnalyst"></action><!-- 机构解绑分析师 -->
+		   	 <action name="721" class="appAnaAction" method="findAppInfo"></action> <!--logo，app名称，app分析师头像，app昵称-->
+		   	 <action name="722" class="appAnaAction" method="relationAnalyst"></action> <!--手机APP分析师相关信息-->
+		   	 <action name="723" class="appAnaAction" method="appAnalystRegist"></action> <!--APP分析师申请机构-->
+		     <action name="731" class="appUpload" ></action> <!--APP自动生成 -->
+		     <action name="732" class="appAnaAction" method="deleteAppRegist"></action> <!--清空APP注册信息-->
+		     <action name="733" class="appUpload" method="createAppDown"></action> <!--APP自动生成 -->
+		    
+    </package>
+   <!-- 前端跨域调用接口 -->
+    <package name="jsappinfo" namespace="/" extends="struts-default">
+	   		 <action name="801" class="appAnaAction" method="findAppInfo"></action><!-- logo，app名称，app分析师头像，app昵称-->
+	   		 <action name="802" class="appAnaAction" method="relationAnalyst"></action><!-- app一句话分享，下载地址，二维码接口 针对前端 -->
+	  		 <action name="803" class="jsAppAnaAction" method="findAppBlogList"></action><!-- 博客分类为开户指南的博客列表   针对前端 -->
+	  		 <action name="804" class="jsAppAnaAction" method="findAppMoreBlogList"></action><!-- l黄金、白银、外汇、其它分类的文章，不带评论   针对前端 -->
+	   		 <action name="806" class="jsAppAnaAction" method="getOrgBlog"></action><!-- 分析师所属机构的最新三篇文章   针对前端 -->
+	   		 <action name="815" class="blogDetailAction" ></action><!--博客详情 前端 -->
+	   		 <action name="824" class="blogCommontWriterAction" method="deleteComment"></action><!-- 删除博客评论 -->
+	   		
+	   		 <action name="831" class="jsAppAnaAction" method="callbacklogin"></action><!-- js登录-->
+	   		 <action name="832" class="logOutAction"></action><!-- js注销-->
+	   		 <action name="833" class="loginAction" method="getUserInfo"></action><!-- js获取个人信息-->
+    </package>
+     <!-- 金币充值-->
+  	 <package name="glod" namespace="/" extends="struts-default" >
+	    <action name="901" class="glodAction"></action><!-- 	我的金币与积分接口 -->
+		<action name="902" class="glodAction" method="addGlod"></action><!-- 添加金币接口-->
+		<action name="903" class="glodAction" method="consumptionGlod"></action><!-- 	消费金币接口 -->
+	    <action name="911" class="glodAction" method="consumptionDetail"></action><!-- 交易明细接口 -->
+	    <action name="912" class="glodAction" method="findConsumptionDetailOrder"></action><!-- 根据订单号获取交易信息-->
+   	</package>
+</struts>

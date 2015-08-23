@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<bean id="propertyMananger" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	  <property name="locations">
+	   <list>
+	    <value>classpath:log4j.properties</value>
+	    <value>classpath:database.properties</value>
+	   </list>
+	  </property>
+	 </bean>
+	<!--                    多数据源配置区域                                                          -->
+	<!-- 定义社区MySql数据库连接与连接池 --> 
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	          <property name="driverClass"><value>${jdbc.driverClassName}</value></property>
+	          <property name="jdbcUrl"><value>${jdbc.url}</value></property>               
+	          <property name="user"><value>${jdbc.username}</value></property>
+	          <property name="password"><value>${jdbc.password}</value></property>
+	          <property name="minPoolSize"><value>${c3p0.minPoolSize}</value></property>
+	          <property name="maxPoolSize"><value>${c3p0.maxPoolSize}</value></property>
+	          <property name="maxIdleTime"><value>${c3p0.maxIdleTime}</value></property>
+	          <property name="acquireIncrement"><value>${c3p0.acquireIncrement}</value></property>
+	          <property name="maxStatements"><value>${c3p0.maxStatements}</value></property>
+	          <property name="maxStatementsPerConnection"><value>${c3p0.maxStatementsPerConnection}</value></property>
+	          <property name="initialPoolSize"><value>${c3p0.initialPoolSize}</value></property>
+	          <property name="idleConnectionTestPeriod"><value>${c3p0.idleConnectionTestPeriod}</value></property>
+	          <property name="acquireRetryAttempts"><value>${c3p0.acquireRetryAttempts}</value></property>
+	          <property name="acquireRetryDelay"><value>${c3p0.acquireRetryDelay}</value></property> 
+	          <!--当连接池用完时客户端调用getConnection()后等待获取新连接的时间，超时后将抛出SQLException,如设为0则无限期等待。单位毫秒。Default: 0 -->
+	          <property name="checkoutTimeout"><value>3000</value></property>  
+	          <property name="testConnectionOnCheckin"><value>true</value></property> 
+	</bean> 
+	<!-- 定义社区MySql2数据库连接与连接池 --> 
+	<bean id="dataSource2" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	          <property name="driverClass"><value>${jdbc2.driverClassName}</value></property>
+	          <property name="jdbcUrl"><value>${jdbc2.url}</value></property>               
+	          <property name="user"><value>${jdbc2.username}</value></property>
+	          <property name="password"><value>${jdbc2.password}</value></property>
+	          <property name="minPoolSize"><value>${c3p0.minPoolSize}</value></property>
+	          <property name="maxPoolSize"><value>${c3p0.maxPoolSize}</value></property>
+	          <property name="maxIdleTime"><value>${c3p0.maxIdleTime}</value></property>
+	          <property name="acquireIncrement"><value>${c3p0.acquireIncrement}</value></property>
+	          <property name="maxStatements"><value>${c3p0.maxStatements}</value></property>
+	          <property name="maxStatementsPerConnection"><value>${c3p0.maxStatementsPerConnection}</value></property>
+	          <property name="initialPoolSize"><value>${c3p0.initialPoolSize}</value></property>
+	          <property name="idleConnectionTestPeriod"><value>${c3p0.idleConnectionTestPeriod}</value></property>
+	          <property name="acquireRetryAttempts"><value>${c3p0.acquireRetryAttempts}</value></property>
+	          <property name="acquireRetryDelay"><value>${c3p0.acquireRetryDelay}</value></property> 
+	          <!--当连接池用完时客户端调用getConnection()后等待获取新连接的时间，超时后将抛出SQLException,如设为0则无限期等待。单位毫秒。Default: 0 -->
+	          <property name="checkoutTimeout"><value>3000</value></property>  
+	          <property name="testConnectionOnCheckin"><value>true</value></property> 
+	</bean> 
+
+	<!-- 	 
+	 <bean id="middlewareDao" class="com.wm927.dao.impl.MiddlewareDaoImpl" > 
+		<property name="dataSource" ref="dataSource"/>
+	</bean> 
+	<bean id="middlewareDao2" class="com.wm927.dao.impl.MiddlewareDaoImpl"> 
+		<property name="dataSource" ref="dataSource2"/>
+	</bean>  -->
+	
+	<!-- 多数据源配置 -->
+	<bean id="dynamicDataSource" class="com.wm927.dbutils.DynamicDataSource">  
+	    <!-- 通过key-value的形式来关联数据源 -->  
+	    <property name="targetDataSources">  
+	        <map key-type="java.lang.String">  
+	            <entry value-ref="dataSource" key="dataSource"></entry>  
+	            <entry value-ref="dataSource2" key="dataSource2"></entry>  
+	        </map>  
+	    </property>
+	    <!--默认数据源 -->  
+	    <property name="defaultTargetDataSource" ref="dataSource"></property>  
+	</bean>
+	
+	<!-- 必须加上  scope="prototype" 保持dao层不是单列，防止出现共享dao-->
+	<bean id="middlewareDao" class="com.wm927.dao.impl.MiddlewareDaoImpl" scope="prototype" > 
+		<property name="dataSource" ref="dynamicDataSource"/>
+	</bean> 
+	
+	
+<!-- 	<bean id="databaseInterceptor" class="com.wm927.interceptor.DatabaseInterceptor" ></bean>
+    
+    <aop:config> 
+         切入点 
+         <aop:pointcut id="interceptor" 
+                expression="execution(public * com.wm927.service.impl.*.*(..)) "/>  
+         在该切入点使用自定义拦截器 
+         <aop:advisor pointcut-ref="interceptor" advice-ref="databaseInterceptor"/>
+      </aop:config> -->
+	
+		<!-- 				定时器 
+        <bean id="callprice" class="com.wm927.interceptor.Scheduler">
+        	<property name="middlewareDao" ref="middlewareDao"/>
+        </bean>
+        <bean id="updateDaylyReturn" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+            <property name="targetObject" ref="callprice" />
+            <property name="targetMethod" value="updateDaylyReturn"/>
+        </bean>
+        <bean id="updateDaylyReturnTime" class="org.springframework.scheduling.quartz.CronTriggerBean">
+            <property name="jobDetail" ref="updateDaylyReturn" />
+            <property name="cronExpression">
+                <value>0 58 23 * * ?</value>
+            </property>
+        </bean>   
+        
+          <bean id="checkUpdateForWeek" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+            <property name="targetObject" ref="callprice" />
+            <property name="targetMethod" value="checkUpdateForWeek"/>
+        </bean>
+        <bean id="checkUpdateForWeekTime" class="org.springframework.scheduling.quartz.CronTriggerBean">
+            <property name="jobDetail" ref="checkUpdateForWeek" />
+            <property name="cronExpression">
+                <value>0 */57 * * * ?</value>
+            </property>
+        </bean>  
+        
+        总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序
+         <bean id="startQuertz" lazy-init="true" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+            <property name="triggers">
+                <list>
+                     <ref bean="updateDaylyReturnTime"/>  
+                     <ref bean="checkUpdateForWeekTime"/>   
+                </list>
+            </property>
+        </bean>   -->
+</beans>

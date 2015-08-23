@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<!-- MySql_Service实现 -->
+<bean id="middlewareService" class="com.wm927.service.impl.MiddlewareServiceImpl">
+	<property name="middlewareDao" >
+		<ref bean="middlewareDao"/>
+	</property>
+</bean>
+
+
+<!-- 敏感词过滤器 -->
+<bean id="sensitiveWordFilter" class="com.wm927.commons.SensitiveWordFilter"/>
+<!-- 原始版控制器父类 -->
+<bean id="middlewareActionServiceInterface" class="com.wm927.service.impl.MiddlewareActionServiceInterface" abstract="true">
+	<property name="middlewareService" >
+		<ref bean="middlewareService"/>
+	</property>
+</bean>
+<!-- 原始版控制器 -->
+<bean id="middlewareActionService" class="com.wm927.service.impl.MiddlewareActionService" parent="middlewareActionServiceInterface" abstract="true">
+</bean>
+
+<bean id="expiresAdvice" class="com.wm927.action.msg.ExpiresAdvice" parent="middlewareActionServiceInterface" init-method="sendAdvice"></bean>
+<bean id="dbTest" class="com.wm927.dbutils.DBTest" scope="prototype"  parent="middlewareActionService">
+ </bean>
+<bean id="errorAction" class="com.wm927.exception.ErrorAction" scope="prototype"  parent="middlewareActionService">
+ </bean>
+<bean id="loginAction" class="com.wm927.action.user.Login" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="logOutAction" class="com.wm927.action.user.LogOut" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="simplePointAction" class="com.wm927.action.user.SimplePointLogin" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="analystAction" class="com.wm927.action.user.Analyst" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="phoneAction" class="com.wm927.action.validate.PhoneValid" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="articleAction" class="com.wm927.action.article.Article" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="analystAuthenticateAction" class="com.wm927.action.user.AnalystAuthenticate" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="analystAuthenticateResultAction" class="com.wm927.action.user.AuthenticateResult" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="analystPassAction" class="com.wm927.action.user.AnalystPass" scope="prototype" parent="middlewareActionService" >
+</bean>
+<!-- 沙龙博客块 -->
+<bean id="microBlogDeleteAction" class="com.wm927.action.blog.MicroBlogDelete" scope="prototype" parent="middlewareActionService">
+</bean>
+<bean id="microBlogWriterAction" class="com.wm927.action.blog.MicroBlogWriter" scope="prototype" parent="middlewareActionService">
+</bean>
+<!-- 博客 -->
+<bean id="blogWriterAction" class="com.wm927.action.blog.BlogWriter" scope="prototype" parent="middlewareActionService">
+</bean>
+<bean id="blogPraiseAction" class="com.wm927.action.blog.BlogPraise" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="blogListAction" class="com.wm927.action.blog.BlogList" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="blogTypeAction" class="com.wm927.action.blog.BlogType" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="blogDetailAction" class="com.wm927.action.blog.BlogDetail" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="blogDeleteAction" class="com.wm927.action.blog.BlogDelete" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="blogCommontAction" class="com.wm927.action.blog.BlogComment" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="blogCommontWriterAction" class="com.wm927.action.blog.BlogCommentWriter" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="blogPurviewAction" class="com.wm927.action.blog.BlogUpdatePurview" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="microCommentAction" class="com.wm927.action.blog.MicroBlogComment" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="microPraiseAction" class="com.wm927.action.blog.MicroBlogPraise" scope="prototype" parent="middlewareActionService" >
+</bean>
+<!-- 机构分析师 -->
+<bean id="organizationAction" class="com.wm927.action.user.Organization" scope="prototype" parent="middlewareActionService" >
+</bean>
+<!-- 个人资料-->
+<bean id="userInfoAction" class="com.wm927.action.userinfo.UserInfo" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="updateUserAction" class="com.wm927.action.userinfo.UpdateUser" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="headUploadAction" class="com.wm927.action.userinfo.HeadUpload" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="belongPlaceAction" class="com.wm927.action.userinfo.BelongPlace" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="passwordUpdateAction" class="com.wm927.action.userinfo.PasswordUpdate" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="updateStateAction" class="com.wm927.action.userinfo.UpdateState" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="messageStateAction" class="com.wm927.action.userinfo.MessageState" scope="prototype" parent="middlewareActionService" >
+</bean>
+<!-- 粉丝-->
+<bean id="attentionListAction" class="com.wm927.action.fans.AttentionList" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="fansListAction" class="com.wm927.action.fans.FansList" scope="prototype" parent="middlewareActionService" >
+</bean>
+<!-- 信息中心-->
+<bean id="adviceAction" class="com.wm927.action.msg.Advice" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="blogPraiseListAction" class="com.wm927.action.msg.BlogPraiseList" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="blogCommentListAction" class="com.wm927.action.msg.BlogCommentList" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="flowListAction" class="com.wm927.action.fans.FlowList" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="rankAnalystAction" class="com.wm927.action.fans.RankAnalyst" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="giftListAction" class="com.wm927.action.fans.GiftList" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="buyCircleAction" class="com.wm927.action.fans.BuyCircle" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="seniorAnalystApplyAction" class="com.wm927.action.user.Senior_analyst_apply" scope="prototype" parent="middlewareActionService" >
+</bean><!-- 高级分析师申请 -->
+<!-- 策略服务 -->
+<bean id="TacticsIsPassAction" class="com.wm927.action.user.Tactics_Service" scope="prototype" parent="middlewareActionService" >
+</bean>
+<!-- APP信息 -->
+<bean id="appOrgAction" class="com.wm927.action.user.AppOrganization" scope="prototype" parent="middlewareActionService" ></bean>
+<bean id="appAnaAction" class="com.wm927.action.user.AppAnalyst" scope="prototype" parent="middlewareActionService" ></bean>
+<bean id="jsAppAnaAction" class="com.wm927.action.user.JSAppAnalyst" scope="prototype" parent="middlewareActionService" ></bean>
+<bean id="findPasswordAction" class="com.wm927.action.userinfo.FindPassword" scope="prototype" parent="middlewareActionService" >
+<property name="springtoMail" ref="springtoMail"></property>
+</bean>
+ <!-- 注意:这里的参数(如用户名、密码)都是针对邮件发送者的 -->
+ <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+ <property name="host"><value>smtp.exmail.qq.com</value></property>
+ <property name="javaMailProperties">
+ <props>
+ <prop key="mail.smtp.auth">true</prop>
+ <prop key="mail.smtp.timeout">25000</prop>
+ </props>
+ </property>
+ <property name="username">
+ <value>postmaster@wm927.com</value>
+ </property>
+ <property name="password">
+ <value>jasmine123456</value>
+ </property>
+ </bean>
+ 
+ <bean id="springtoMail" class="com.wm927.action.validate.SpringtoMail" scope="prototype" >
+ <property name="mailSender" ref="mailSender"></property>
+</bean>
+
+<bean id="checkRegist" class="com.wm927.action.user.CheckRegist" scope="prototype" parent="middlewareActionService" >
+</bean>
+
+<bean id="registAction" class="com.wm927.action.user.RegistAction" scope="prototype" parent="middlewareActionService" >
+
+</bean>
+
+<bean id="vilidateAction" class="com.wm927.action.validate.ValidateAction" scope="prototype" parent="middlewareActionService" >
+<property name="springtoMail" ref="springtoMail"></property>
+</bean>
+
+<bean id="showAction" class="com.wm927.action.data.ShowDynamicAction" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="glodAction" class="com.wm927.action.data.Glod" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="activityMailBoxAction" class="com.wm927.action.validate.ActivityMailBoxAction" scope="prototype" parent="middlewareActionService" >
+<property name="springtoMail" ref="springtoMail"></property>
+</bean>
+
+<bean id="emailSendAgain" class="com.wm927.action.validate.EmailSendAgain" scope="prototype" parent="middlewareActionService" >
+<property name="springtoMail" ref="springtoMail"></property>
+</bean>
+<bean id="dynamicLoad" class="com.wm927.action.data.DynamicLoad" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="plotList" class="com.wm927.action.data.PlotList" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="accountList" class="com.wm927.action.data.AccountList" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="giftDetail" class="com.wm927.action.data.GiftDetail" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="callInfo" class="com.wm927.action.data.CallInfo" scope="prototype" parent="middlewareActionService" >
+</bean>
+
+<bean id="analystExchangeRoom" class="com.wm927.action.blog.AnalystExchangeRoom" scope="prototype" parent="middlewareActionService" >
+</bean>
+
+<bean id="turnTableAction" class="com.wm927.action.data.TurnTableAction" scope="prototype" parent="middlewareActionService" >
+
+</bean>
+<!--验证用户唯一 -->
+<bean id="validateuserAction" class="com.wm927.action.validate.VidateUserAction" scope="prototype" parent="middlewareActionService" >
+</bean>
+
+<!-- 偏好设置-->
+<bean id="attentionAreaAction" class="com.wm927.action.attention.AttentionArea" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="attentionCurrencyAction" class="com.wm927.action.attention.AttentionCurrency" scope="prototype" parent="middlewareActionService" >
+</bean>
+<!-- 定制资讯，经济数据-->
+<bean id="showArticleAction" class="com.wm927.action.attention.ShowArticleaAtion" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="showEcolomicAction" class="com.wm927.action.attention.ShowEcolomicAction" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="commentArticleAction" class="com.wm927.action.attention.CommentArticle" scope="prototype" parent="middlewareActionService" >
+</bean>
+<!-- video   -->
+<bean id="backVideoAction" class="com.wm927.action.video.VideoAction" scope="prototype" parent="middlewareActionService" />
+<!-- search -->
+<bean id="searchAction" class="com.wm927.Search.SearchAction" scope="prototype" parent="middlewareActionService" />
+<bean id="webArticlePraiseAction" class="com.wm927.action.article.WebArticlePraise" scope="prototype" parent="middlewareActionService" />
+<bean id="webArticleCommentAction" class="com.wm927.action.article.WebArticleComment" scope="prototype" parent="middlewareActionService" />
+<bean id="registerAppAction" class="com.wm927.action.user.RegisterAppAnalyst" scope="prototype" parent="middlewareActionService" >
+</bean>
+<bean id="fileUpload" class="com.wm927.action.ftp.FileUpload">
+	
+</bean>
+<bean id="appUpload" class="com.wm927.action.ftp.AppUpload" scope="prototype" parent="middlewareActionService" >
+	<property name="fileUpload">
+		<ref bean="fileUpload"/>
+	</property>
+	<property name="down_ip">
+		<value>61.145.163.87</value>
+	</property>
+	<property name="down_name">
+		<value>ftpsns</value>
+	</property>
+	<property name="down_pwd">
+		<value>ftpsns@php.com</value>
+	</property>
+	<property name="up_ip">
+		<value>58.64.216.216</value>
+	</property>
+	<property name="up_name">
+		<value>ftpuser3</value>
+	</property>
+	<property name="up_pwd">
+		<value>wisewit@wb927.com</value>
+	</property>
+</bean>
+</beans>

@@ -1,0 +1,1934 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rmds>
+
+  <!--
+市场列表：
+	0,'UKNW',	// 未知
+	1,'ESHS',	// 上海证券交易所
+	2,'ESZS',	// 深圳证券交易所
+	3,'ESYC',	// 中国大陆创业板市场
+	4,'ANHC',	// 中国大陆上海或深圳或创业板证券交易所
+	5,'XEKH',	// 香港联合交易所
+	6,'ESBT',	// 台北证券交易所
+	7,'EST',	// 东京证券交易所
+	8,'ESL',	// 伦敦证券交易所
+	9,'FKLF',	// 法兰克福证券交易所
+	10,'ESYN',	// 纽约证券交易所
+	11,'QDSN',	// 纳斯达克证券交易所
+	12,'EROF', 	// 外汇交易所群
+	13,'EMC',	// 芝加哥商业交易
+	14,'NYMEX', //纽约商品交易所
+	15,'EML',  	// 伦敦金属交易所
+	16,'EFHS',	// 上海期货交易所
+	17,'EGHS',	// 上海黄金交易所
+	18,'XDNI',	// 全球指数
+	19,'YUEGUIYIN' //粤贵银
+	20,'TJPME'     //天津贵金属交易所
+	21, 'OIL'      //原油
+	22,'FOXFUTURES" //外汇期货
+	23,'CSRPME' //南交所
+	国债收益率
+	
+
+	
+-->
+
+  <!--市场配置-->
+  <MarketConfig>
+
+    <!--默认配置-->
+    <Market Name="Default" >
+      <TradingTimeEx>
+        <!--交易时间段 指定到周几的开收市时间-->
+        <WEEK Num="1">
+          <TradingTime  Cross="1"  PreOpenTime="00:00:00" OpenTime="00:00:00" CloseTime="03:59:59" AfterCloseTime="03:59:59"/>
+        </WEEK>
+      </TradingTimeEx>
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1"  PreOpenTime="04:00:00" OpenTime="04:00:00" CloseTime="03:59:59" AfterCloseTime="03:59:59"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--南交所-->
+    <Market Name="CSRPME" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1"  PreOpenTime="09:00:00" OpenTime="09:00:00" CloseTime="07:00:00" AfterCloseTime="07:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--国债收益率_美国-->
+    <Market Name="USRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1"  PreOpenTime="08:00:00" OpenTime="08:00:00" CloseTime="06:15:00" AfterCloseTime="06:15:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--国债收益率_日本-->
+    <Market Name="JPRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="08:00:00" OpenTime="08:00:00" CloseTime="06:00:00" AfterCloseTime="06:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--国债收益率_瑞士-->
+    <Market Name="CHRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="15:00:00" OpenTime="15:00:00" CloseTime="01:00:00" AfterCloseTime="01:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--国债收益率_澳大利亚-->
+    <Market Name="AURR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="08:00:00" OpenTime="08:00:00" CloseTime="03:00:00" AfterCloseTime="03:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--国债收益率_加拿大 -->
+    <Market Name="ACRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="20:00:00" OpenTime="20:00:00" CloseTime="06:00:00" AfterCloseTime="06:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+
+
+    <!--国债收益率_新西兰 -->
+    <Market Name="NZRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="02:00:00" OpenTime="02:00:00" CloseTime="08:00:00" AfterCloseTime="08:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--国债收益率_德国-->
+    <Market Name="DERR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="15:00:00" OpenTime="15:00:00" CloseTime="02:00:00" AfterCloseTime="02:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--国债收益率_葡萄牙-->
+    <Market Name="PTRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime Cross="1" PreOpenTime="15:00:00" OpenTime="15:00:00" CloseTime="02:00:00" AfterCloseTime="02:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--国债收益率_西班牙-->
+    <Market Name="ESRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="15:00:00" OpenTime="15:00:00" CloseTime="01:00:00" AfterCloseTime="01:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--国债收益率_意大利-->
+    <Market Name="ITRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="15:00:00" OpenTime="15:00:00" CloseTime="02:00:00" AfterCloseTime="02:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--国债收益率_法国-->
+    <Market Name="FRRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="15:00:00" OpenTime="15:00:00" CloseTime="01:00:00" AfterCloseTime="01:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--国债收益率_中国-->
+    <Market Name="CNRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="0" PreOpenTime="09:00:00" OpenTime="09:00:00" CloseTime="15:00:00" AfterCloseTime="15:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--国债收益率_英镑-->
+    <Market Name="GBRR" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="14:00:00" OpenTime="14:00:00" CloseTime="03:00:00" AfterCloseTime="03:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+
+
+    <!--贵金属_沪-->
+    <Market Name="METAL_HS" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="21:00:00" OpenTime="21:00:00" CloseTime="14:30:00" AfterCloseTime="14:30:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--贵金属_COMEX-->
+    <Market Name="METAL_COMEX" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="07:00:00" OpenTime="07:00:00" CloseTime="06:15:00" AfterCloseTime="06:15:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--贵金属_SGEX-->
+    <Market Name="METAL_SGEX" >
+      <TradingTimeEx>
+        <!--交易时间段 指定到周几的开收市时间-->
+        <WEEK Num="1">
+          <TradingTime  Cross="0"  PreOpenTime="09:00:00" OpenTime="09:00:00" CloseTime="15:30:00" AfterCloseTime="15:30:00"/>
+        </WEEK>
+      </TradingTimeEx>
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1"  PreOpenTime="21:00:00" OpenTime="21:00:00" CloseTime="15:30:00" AfterCloseTime="15:30:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--贵金属_现货-->
+    <Market Name="METAL_SPOT" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="06:00:00" OpenTime="06:00:00" CloseTime="05:59:59" AfterCloseTime="05:59:59"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--上证综合指数-->
+    <Market Name="INDEX_SSEC" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="0" PreOpenTime="09:30:00" OpenTime="09:30:00" CloseTime="15:00:00" AfterCloseTime="15:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--英国富时指数-->
+    <Market Name="INDEX_FTSE" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="16:00:00" OpenTime="16:00:00" CloseTime="00:30:00" AfterCloseTime="00:30:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--沪深300指数-->
+    <Market Name="INDEX_IF" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="0" PreOpenTime="09:15:00" OpenTime="09:15:00" CloseTime="15:15:00" AfterCloseTime="15:15:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--印度指数指数-->
+    <Market Name="INDEX_SENSEX" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="0"  PreOpenTime="12:25:00" OpenTime="08:00:00" CloseTime="16:00:00" AfterCloseTime="16:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--台湾加权指数-->
+    <Market Name="INDEX_TWI" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="0"  PreOpenTime="09:00:00" OpenTime="09:00:00" CloseTime="13:30:00" AfterCloseTime="13:30:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--澳洲综合AOI指数-->
+    <Market Name="INDEX_AOI" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="0"  PreOpenTime="08:00:00" OpenTime="08:00:00" CloseTime="14:00:00" AfterCloseTime="14:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--法国CAC指数-->
+    <Market Name="INDEX_CAC" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime Cross="1"  PreOpenTime="16:00:00" OpenTime="16:00:00" CloseTime="00:25:00" AfterCloseTime="00:25:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--德国DAX指数-->
+    <Market Name="INDEX_DAX" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="16:00:00" OpenTime="16:00:00" CloseTime="03:00:00" AfterCloseTime="03:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--海峡时报指数-->
+    <Market Name="INDEX_FTSTI" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="0" PreOpenTime="09:00:00" OpenTime="09:00:00" CloseTime="17:00:00" AfterCloseTime="17:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--道琼斯指数-->
+    <Market Name="INDEX_INDI" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1"  PreOpenTime="10:30:00" OpenTime="10:30:00" CloseTime="05:00:00" AfterCloseTime="05:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--日经指数-->
+    <Market Name="INDEX_NIXI" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="0" PreOpenTime="08:00:00" OpenTime="08:00:00" CloseTime="14:00:00" AfterCloseTime="14:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--CRB指数-->
+    <Market Name="INDEX_CRB" >
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime Cross="1"  PreOpenTime="22:00:00" OpenTime="22:00:00" CloseTime="03:59:59" AfterCloseTime="03:59:59"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--美元指数-->
+    <Market Name="INDEX_USD" >
+
+      <!--普通交易时间段，整周时间相同-->
+      <TradingTime  Cross="1" PreOpenTime="05:00:00" OpenTime="05:00:00" CloseTime="04:59:59" AfterCloseTime="04:59:59"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--外汇期货-->
+    <Market Name="FOXFUTURES" >
+      <!--交易时间段-->
+      <TradingTime Cross="1"  PreOpenTime="07:00:00" OpenTime="07:00:00" CloseTime="06:00:00" AfterCloseTime="06:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--原油-->
+    <Market Name="OIL" >
+      <!--交易时间段-->
+      <TradingTime Cross="1"  PreOpenTime="06:00:00" OpenTime="06:00:00" CloseTime="05:15:00" AfterCloseTime="05:15:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--粤贵银-->
+    <Market Name="YUEGUIYIN" >
+      <TradingTimeEx>
+        <!--交易时间段 指定到周几的开收市时间-->
+        <WEEK Num="1">
+          <TradingTime  Cross="1" PreOpenTime="08:00:00" OpenTime="08:30:00" CloseTime="04:00:00" AfterCloseTime="04:00:00"/>
+        </WEEK>
+      </TradingTimeEx>
+      <!--交易时间段-->
+      <TradingTime  Cross="1" PreOpenTime="06:00:00" OpenTime="06:00:00" CloseTime="04:00:00" AfterCloseTime="04:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--天津贵金属交易所-->
+    <Market Name="TJPME" >
+      <TradingTimeEx>
+        <!--交易时间段 指定到周几的开收市时间-->
+        <WEEK Num="1">
+          <TradingTime Cross="1"  PreOpenTime="08:00:00" OpenTime="08:30:00" CloseTime="04:00:00" AfterCloseTime="04:00:00"/>
+        </WEEK>
+      </TradingTimeEx>
+      <!--交易时间段-->
+      <TradingTime  Cross="1" PreOpenTime="06:00:00" OpenTime="06:00:00" CloseTime="04:00:00" AfterCloseTime="04:00:00"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--外汇交易配置-->
+    <Market Name="EROF" >
+
+      <TradingTimeEx>
+        <!--交易时间段 指定到周几的开收市时间-->
+        <WEEK Num="1">
+          <TradingTime  Cross="1"  PreOpenTime="00:00:00" OpenTime="00:00:00" CloseTime="03:59:59" AfterCloseTime="03:59:59"/>
+        </WEEK>
+        <WEEK Num="5">
+          <TradingTime  Cross="1"  PreOpenTime="04:00:00" OpenTime="04:00:00" CloseTime="07:00:00" AfterCloseTime="07:00:00"/>
+        </WEEK>
+      </TradingTimeEx>
+
+      <!--交易时间段-->
+      <TradingTime  Cross="1" PreOpenTime="04:00:00" OpenTime="04:00:00" CloseTime="03:59:59" AfterCloseTime="03:59:59"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--主要指数配置-->
+    <Market Name="XDNI" >
+      <!--交易时间段-->
+      <TradingTime  Cross="1" PreOpenTime="04:00:00" OpenTime="04:00:00" CloseTime="03:59:59" AfterCloseTime="03:59:59"/>
+      <CycleTimeStartPoint>
+        <!--周期时间起始点-->
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list=""/>
+        <HOUR2 enable="1" list=""/>
+        <HOUR4 enable="1" list=""/>
+        <HOUR8 enable="1" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--上海交易所-->
+    <Market Name="ESHS">
+      <!--交易时间段-->
+      <TradingTime  Cross="0" PreOpenTime="09:00:00" OpenTime="09:30:00" CloseTime="11:30:00" AfterCloseTime="11:45:00"/>
+      <TradingTime  Cross="0" PreOpenTime="12:15:00" OpenTime="13:00:00" CloseTime="15:00:00" AfterCloseTime="15:15:00"/>
+      <!--周期时间起始点-->
+      <CycleTimeStartPoint>
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list="09:30:00|10:30:00|11:30:00|13:00:00|14:00:00|15:00:00"/>
+        <HOUR2 enable="1" list="09:30:00|11:30:00|13:00:00|15:00:00"/>
+        <HOUR4 enable="0" list=""/>
+        <HOUR8 enable="0" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+    <!--深圳交易所-->
+    <Market Name="ESZS">
+      <!--交易时间段-->
+      <TradingTime Cross="0"  PreOpenTime="09:00:00" OpenTime="09:30:00" CloseTime="11:30:00" AfterCloseTime="11:45:00"/>
+      <TradingTime Cross="0"  PreOpenTime="12:15:00" OpenTime="13:00:00" CloseTime="15:00:00" AfterCloseTime="15:15:00"/>
+      <!--周期时间起始点-->
+      <CycleTimeStartPoint>
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list="09:30:00|10:30:00|11:30:00|13:00:00|14:00:00|15:00:00"/>
+        <HOUR2 enable="1" list="09:30:00|11:30:00|13:00:00|15:00:00"/>
+        <HOUR4 enable="0" list=""/>
+        <HOUR8 enable="0" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+    <!--香港交易所-->
+    <Market Name="XEKH">
+      <!--交易时间段-->
+      <TradingTime Cross="0"  PreOpenTime="09:00:00" OpenTime="09:30:00" CloseTime="12:00:00" AfterCloseTime="12:15:00"/>
+      <TradingTime Cross="0"  PreOpenTime="12:15:00" OpenTime="13:00:00" CloseTime="16:00:00" AfterCloseTime="16:15:00"/>
+      <!--周期时间起始点-->
+      <CycleTimeStartPoint>
+        <MIN1 enable="1" list=""/>
+        <MIN5 enable="1" list=""/>
+        <MIN15 enable="1" list=""/>
+        <MIN30 enable="1" list=""/>
+        <HOUR1 enable="1" list="09:30:00|10:30:00|11:30:00|13:00:00|14:00:00|15:00:00"/>
+        <HOUR2 enable="1" list="09:30:00|11:30:00|13:00:00|15:00:00"/>
+        <HOUR4 enable="0" list=""/>
+        <HOUR8 enable="0" list=""/>
+        <DAY enable="1" list=""/>
+        <WEEK enable="1" list=""/>
+        <MONTH enable="1" list=""/>
+      </CycleTimeStartPoint>
+    </Market>
+
+
+  </MarketConfig>
+
+
+  <!--代码配置-->
+  <request>
+    <!--外汇直盘-->
+    <item>
+      <name mul="10000" market="EROF" enable="1" dec="4"  own_code="EURUSD"  displayname="EURUSD"  chinese="欧元美元">EUR=</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="USDJPY"  displayname="USDJPY"  chinese="美元日元">JPY=</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="GBPUSD"  displayname="GBPUSD"  chinese="英镑美元">GBP=</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="USDCHF"  displayname="USDCHF"  chinese="美元瑞郎">CHF=</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="AUDUSD"  displayname="AUDUSD"  chinese="澳元美元">AUD=</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="USDCAD"  displayname="USDCAD"  chinese="美元加元">CAD=</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="NZDUSD"  displayname="NZDUSD"  chinese="纽元美元">NZD=</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="USDHKD"  displayname="USDHKD"  chinese="美元港币">HKD=</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="USDCNY"  displayname="USDCNY"  chinese="人民币">CNY=</name>
+    </item>
+
+    <!--外汇交叉盘-->
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="EURJPY"  displayname="EURJPY"  chinese="欧元日元">EURJPY=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="EURGBP"  displayname="EURGBP"  chinese="欧元英镑">EURGBP=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="EURCHF"  displayname="EURCHF"  chinese="欧元瑞郎">EURCHF=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="EURAUD"  displayname="EURAUD"  chinese="欧元澳元">EURAUD=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="GBPJPY"  displayname="GBPJPY"  chinese="英镑日元">GBPJPY=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="GBPCHF"  displayname="GBPCHF"  chinese="英镑瑞郎">GBPCHF=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="AUDJPY"  displayname="AUDJPY"  chinese="澳元日元">AUDJPY=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="AUDCAD"  displayname="AUDCAD"  chinese="澳元加元">AUDCAD=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="AUDCHF"  displayname="AUDCHF"  chinese="澳元瑞郎">AUDCHF=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="AUDGBP"  displayname="AUDGBP"  chinese="澳元英镑">AUDGBP=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="CADCHF"  displayname="CADCHF"  chinese="加元瑞郎">CADCHF=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="CADEUR"  displayname="CADEUR"  chinese="加元欧元">CADEUR=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="CADGBP"  displayname="CADGBP"  chinese="加元英镑">CADGBP=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="CADJPY"  displayname="CADJPY"  chinese="加元日元">CADJPY=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="CHFJPY"  displayname="CHFJPY"  chinese="瑞郎日元">CHFJPY=R</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="NZDJPY"  displayname="NZDJPY"  chinese="纽元日元">NZDJPY=R</name>
+    </item>
+
+
+    <!--以下为指数-->
+    <item>
+      <name mul="10000" market="INDEX_USD"  enable="1"  dec="2"  own_code="USD"  displayname="USD"  chinese="美元指数">=USD</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="CRB"  displayname="CRB"  chinese="CRB指数">.TRJCRBTR</name>
+    </item>
+    <item>
+      <name mul="10000" market="XEKH"  enable="1"  dec="2"  own_code="HSI"  displayname="HSI"  chinese="恒生指数">.HSI</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="NIXI"  displayname="NIXI"  chinese="日经指数">.N225</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_INDI"  enable="1"  dec="2"  own_code="INDI"  displayname="INDI"  chinese="道琼斯">.DJI</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_INDI"  enable="1"  dec="2"  own_code="NQCI"  displayname="NQCI"  chinese="纳斯达克">.IXIC</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_INDI"  enable="1"  dec="2"  own_code="SPCI"  displayname="SPCI"  chinese="标普指数">.INX</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_FTSTI"  enable="1"  dec="2"  own_code="FTSTI"  displayname="FTSTI"  chinese="海峡时报">.FTSTI</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_DAX"  enable="1"  dec="2"  own_code="DAX"  displayname="DAX"  chinese="德国DAX">.GDAXI</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_CAC"  enable="1"  dec="2"  own_code="FCHI"  displayname="FCHI"  chinese="法国CAC">.FCHI</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_AOI"  enable="1"  dec="2"  own_code="AOI"  displayname="AOI"  chinese="澳洲综合AOI">.AORD</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_SENSEX"  enable="1"  dec="2"  own_code="SENSEX"  displayname="SENSEX"  chinese="印度指数">.NSEI</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_TWI"  enable="1"  dec="2"  own_code="TWI"  displayname="TWI"  chinese="台湾加权">.TWII</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_IF"  enable="1"  dec="2"  own_code="IF"  displayname="IF"  chinese="沪深300">.CSI300</name>
+    </item>
+    <item>
+      <name mul="10000" market="INDEX_FTSE"  enable="1"  dec="2"  own_code="FTSE"  displayname="FTSE"  chinese="英国富时">.FTSE</name>
+    </item>
+    <item>
+      <name mul="10000" market="ESHS"  enable="1"  dec="2"  own_code="SSEC"  displayname="SSEC"  chinese="上证综合">.SSEC</name>
+    </item>
+    <item>
+      <name mul="10000" market="ESHS"  enable="1"  dec="2"  own_code="SZSC"  displayname="SZSC"  chinese="深证成分">.SZSC1</name>
+    </item>
+
+
+    <!--以下是贵金属类-->
+    <item>
+      <name mul="10000" market="METAL_SPOT"  enable="1"  dec="2"  own_code="XAU"  displayname="XAU"  chinese="现货黄金">XAU=</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SPOT"  enable="1"  dec="2"  own_code="XAG"  displayname="XAG"  chinese="现货白银">XAG=</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Au(T+D)"  displayname="Au(T+D)"  chinese="T+D黄金">XAUTD=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Ag(T+D)"  displayname="Ag(T+D)"  chinese="T+D白银">XAGTD=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_COMEX"  enable="1"  dec="2"  own_code="COMEXAU"  displayname="COMEXAU"  chinese="COMEX金">GCv1</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_COMEX"  enable="1"  dec="2"  own_code="COMEXAG"  displayname="COMEXAG"  chinese="COMEX银">SIv1</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_HS"  enable="1"  dec="2"  own_code="AU"  displayname="AU"  chinese="沪金1406">SHAUM4</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_HS"  enable="1"  dec="2"  own_code="AG"  displayname="AG"  chinese="沪银1406">SAGM4</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SPOT"  enable="1"  dec="2"  own_code="XPD"  displayname="XPD"  chinese="现货钯金">XPD=</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SPOT"  enable="1"  dec="2"  own_code="XPT"  displayname="XPT"  chinese="现货铂金">XPT=</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Au99.95"  displayname="Au99.95"  chinese="95金">XAU9995=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Au99.99"  displayname="Au99.99"  chinese="99金">XAU9999=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Pt99.95"  displayname="Pt99.95"  chinese="95白金">XPT9995=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Au50g"  displayname="Au50g"  chinese="50克金">XAU50G=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Ag99.90"  displayname="Ag99.90"  chinese="银99.9">XAG9990=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Ag99.99"  displayname="Ag99.99"  chinese="99银">XAG9999=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Au100g"  displayname="Au100g"  chinese="100克金">XAU100G=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Au(T+N1)"  displayname="Au(T+N1)"  chinese="金(T+N1)">XAUTN1=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Au(T+N2)"  displayname="Au(T+N2)"  chinese="金(T+N2)">XAUTN2=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Au99.50"  displayname="Au99.50"  chinese="金99.5">XAU9950=SGEX</name>
+    </item>
+    <item>
+      <name mul="10000" market="METAL_SGEX"  enable="1"  dec="2"  own_code="Au(T+5)"  displayname="Au(T+5)"  chinese="金(T+5)">XAUT5=SGEX</name>
+    </item>
+
+
+    <!--以下为原油代码-->
+    <item>
+      <name mul="10000" market="OIL"  enable="1"  dec="2"  own_code="CLc1"  displayname="CLc1"  chinese="原油WTI">CLc1</name>
+    </item>
+    <item>
+      <name mul="10000" market="OIL"  enable="1"  dec="2"  own_code="LCOc1"  displayname="LCOc1"  chinese="原油BRT">LCOc1</name>
+    </item>
+    <item>
+      <name mul="10000" market="OIL"  enable="1"  dec="2"  own_code="CLv1"  displayname="CLv1"  chinese="原油WTI">CLv1</name>
+    </item>
+    <item>
+      <name mul="10000" market="OIL"  enable="1"  dec="2"  own_code="LCOv1"  displayname="LCOv1"  chinese="原油BRT">LCOv1</name>
+    </item>
+
+
+
+    <!--以下为CME货币代码-->
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="BPc1"  displayname="BPc1"  chinese="BPc1">BPc1</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="BPc2"  displayname="BPc2"  chinese="BPc2">BPc2</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="BPc3"  displayname="BPc3"  chinese="BPc3">BPc3</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="BPc4"  displayname="BPc4"  chinese="BPc4">BPc4</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="JYc1"  displayname="JYc1"  chinese="JYc1">JYc1</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="JYc2"  displayname="JYc2"  chinese="JYc2">JYc2</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="JYc3"  displayname="JYc3"  chinese="JYc3">JYc3</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="JYc4"  displayname="JYc4"  chinese="JYc4">JYc4</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="SFc1"  displayname="SFc1"  chinese="SFc1">SFc1</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="SFc2"  displayname="SFc2"  chinese="SFc2">SFc2</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="SFc3"  displayname="SFc3"  chinese="SFc3">SFc3</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="SFc4"  displayname="SFc4"  chinese="SFc4">SFc4</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="ADc1"  displayname="ADc1"  chinese="ADc1">ADc1</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="ADc2"  displayname="ADc2"  chinese="">ADc2</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="ADc3"  displayname="ADc3"  chinese="ADc3">ADc3</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="ADc4"  displayname="ADc4"  chinese="ADc4">ADc4</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="CDc1"  displayname="CDc1"  chinese="CDc1">CDc1</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="CDc2"  displayname="CDc2"  chinese="CDc2">CDc2</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="CDc3"  displayname="CDc3"  chinese="CDc3">CDc3</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="CDc4"  displayname="CDc4"  chinese="CDc4">CDc4</name>
+    </item>
+
+
+    <!--外汇期货-->
+    <item>
+      <name mul="10000" market="FOXFUTURES"  enable="1"  dec="4"  own_code="BPv1"  displayname="BPv1"  chinese="英镑连续">BPv1</name>
+    </item>
+    <item>
+      <name mul="10000" market="FOXFUTURES"  enable="1"  dec="0"  own_code="JYv1"  displayname="JYv1"  chinese="日元连续">JYv1</name>
+    </item>
+    <item>
+      <name mul="10000" market="FOXFUTURES"  enable="1"  dec="4"  own_code="SFv1"  displayname="SFv1"  chinese="瑞朗连续">SFv1</name>
+    </item>
+    <item>
+      <name mul="10000" market="FOXFUTURES"  enable="1"  dec="4"  own_code="UROv1"  displayname="UROv1"  chinese="欧元连续">UROv1</name>
+    </item>
+    <item>
+      <name mul="10000" market="FOXFUTURES"  enable="1"  dec="4"  own_code="ADv1"  displayname="ADv1"  chinese="澳元连续">ADv1</name>
+    </item>
+    <item>
+      <name mul="10000" market="FOXFUTURES"  enable="1"  dec="4"  own_code="CDv1"  displayname="CDv1"  chinese="加元连续">CDv1</name>
+    </item>
+    <item>
+      <!--因dxv1无法使用，用DXc1代替-->
+      <name mul="10000" market="FOXFUTURES"  enable="1"  dec="3"  own_code="DXc1"  displayname="DXc1"  chinese="美元连续">DXc1</name>
+    </item>
+    <item>
+      <name mul="10000" market="FOXFUTURES"  enable="1"  dec="4"  own_code="NEv1"  displayname="NEv1"  chinese="纽元连续">NEv1</name>
+    </item>
+
+    <!--粤贵银代码-->
+    <item>
+      <name mul="10000" market="YUEGUIYIN"  enable="1"  dec="0"  own_code="AG15"  displayname="AG15"  chinese="粤贵银9995">AG15</name>
+    </item>
+    <item>
+      <name mul="10000" market="YUEGUIYIN"  enable="1"  dec="3"  own_code="AG100"  displayname="AG100"  chinese="粤贵银100">AG100</name>
+    </item>
+    <item>
+      <name mul="10000" market="YUEGUIYIN"  enable="1"  dec="0"  own_code="AG1"  displayname="AG1"  chinese="粤贵银9999">AG1</name>
+    </item>
+    <!--end粤贵银代码-->
+
+
+    <!--英皇代码-->
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@EUR"  displayname="E@EUR"  chinese="EUR/欧元">E@EUR</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="E@JPY"  displayname="E@JPY"  chinese="JPY/日元">E@JPY</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@GBP"  displayname="E@GBP"  chinese="GBP/英镑">E@GBP</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@CHF"  displayname="E@CHF"  chinese="CHF/瑞郎">E@CHF</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@AUD"  displayname="E@AUD"  chinese="AUD/澳元">E@AUD</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@NZD"  displayname="E@NZD"  chinese="NZD/紐元">E@NZD</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@CAD"  displayname="E@CAD"  chinese="CAD/加元">E@CAD</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@TT"  displayname="E@TT"  chinese="TT">E@TT</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@HKG"  displayname="E@HKG"  chinese="HKG/港金">E@HKG</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@LLG"  displayname="E@LLG"  chinese="LLG/黃金">E@LLG</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@LLS"  displayname="E@LLS"  chinese="LLS/白银">E@LLS</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@HLG"  displayname="E@HLG"  chinese="HLG/港敦">E@HLG</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@EUJP"  displayname="E@EUJP"  chinese="EUJP/欧日">E@EUJP</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="2"  own_code="E@EUCF"  displayname="E@EUCF"  chinese="EUCF/欧瑞">E@EUCF</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@EUGP"  displayname="E@EUGP"  chinese="EUGP/欧英">E@EUGP</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@CFJP"  displayname="E@CFJP"  chinese="CFJP/瑞日">E@CFJP</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@ADJP"  displayname="E@ADJP"  chinese="ADJP/澳日">E@ADJP</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@RKG"  displayname="E@RKG"  chinese="RKG/黃金">E@RKG</name>
+    </item>
+    <item>
+      <name mul="10000" market="EROF"  enable="1"  dec="4"  own_code="E@RKS"  displayname="E@RKS"  chinese="RKS/白银">E@RKS</name>
+    </item>
+    <!--end英皇代码-->
+
+    <!--天通银代码-->
+    <item>
+      <name mul="10000" market="TJPME"  enable="1"  dec="2"  own_code="TJPD"  displayname="TJPD"  chinese="天津钯金">TJPD</name>
+    </item>
+    <item>
+      <name mul="10000" market="TJPME"  enable="1"  dec="2"  own_code="TJAP"  displayname="TJAP"  chinese="天津铂金">TJAP</name>
+    </item>
+    <item>
+      <name mul="10000" market="TJPME"  enable="1"  dec="2"  own_code="TJAG"  displayname="TJAG"  chinese="天津白银">TJAG</name>
+    </item>
+    <item>
+      <name mul="10000" market="TJPME"  enable="1"  dec="2"  own_code="TJMAG"  displayname="TJMAG"  chinese="迷你白银">TJMAG</name>
+    </item>
+    <item>
+      <name mul="10000" market="TJPME"  enable="1"  dec="2"  own_code="TJMAP"  displayname="TJMAP"  chinese="迷你铂金">TJMAP</name>
+    </item>
+    <item>
+      <name mul="10000" market="TJPME"  enable="1"  dec="2"  own_code="TJMPD"  displayname="TJMPD"  chinese="迷你钯金">TJMPD</name>
+    </item>
+    <!--end天通银代码-->
+
+
+    <!--各国国债收益率代码-->
+    <!--美国-->
+    <item>
+      <name mul="10000" market="USRR"  enable="1"  dec="4"  own_code="US1YT"  displayname="US1YT"  chinese="美国1年期">US1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="USRR"  enable="1"  dec="4"  own_code="US2YT"  displayname="US2YT"  chinese="美国2年期">US2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="USRR"  enable="1"  dec="4"  own_code="US5YT"  displayname="US5YT"  chinese="美国5年期">US5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="USRR"  enable="1"  dec="4"  own_code="US10YT"  displayname="US10YT"  chinese="美国10年期">US10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="USRR"  enable="1"  dec="4"  own_code="US30YT"  displayname="US30YT"  chinese="美国30年期">US30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="USRR"  enable="1"  dec="4"  own_code="US1MT"  displayname="US1MT"  chinese="美国1月期">US1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="USRR"  enable="1"  dec="4"  own_code="US3MT"  displayname="US3MT"  chinese="美国3月期">US3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="USRR"  enable="1"  dec="4"  own_code="US6MT"  displayname="US6MT"  chinese="美国6月期">US6MT=RR</name>
+    </item>
+
+
+
+    <!--日本-->
+    <item>
+      <name mul="10000" market="JPRR"  enable="1"  dec="3"  own_code="JP1YT"  displayname="JP1YT"  chinese="日本1年期">JP1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="JPRR"  enable="1"  dec="3"  own_code="JP2YT"  displayname="JP2YT"  chinese="日本2年期">JP2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="JPRR"  enable="1"  dec="3"  own_code="JP5YT"  displayname="JP5YT"  chinese="日本5年期">JP5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="JPRR"  enable="1"  dec="3"  own_code="JP10YT"  displayname="JP10YT"  chinese="日本10年期">JP10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="JPRR"  enable="1"  dec="3"  own_code="JP30YT"  displayname="JP30YT"  chinese="日本30年期">JP30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="JPRR"  enable="1"  dec="3"  own_code="JP1MT"  displayname="JP1MT"  chinese="日本1月期">JP1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="JPRR"  enable="1"  dec="3"  own_code="JP3MT"  displayname="JP3MT"  chinese="日本3月期">JP3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="JPRR"  enable="1"  dec="3"  own_code="JP6MT"  displayname="JP6MT"  chinese="日本6月期">JP6MT=RR</name>
+    </item>
+
+
+
+    <!--瑞士-->
+    <item>
+      <name mul="10000" market="CHRR"  enable="1"  dec="3"  own_code="CH1YT"  displayname="CH1YT"  chinese="瑞士1年期">CH1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CHRR"  enable="1"  dec="3"  own_code="CH2YT"  displayname="CH2YT"  chinese="瑞士2年期">CH2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CHRR"  enable="1"  dec="3"  own_code="CH5YT"  displayname="CH5YT"  chinese="瑞士5年期">CH5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CHRR"  enable="1"  dec="3"  own_code="CH10YT"  displayname="CH10YT"  chinese="瑞士10年期">CH10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CHRR"  enable="1"  dec="3"  own_code="CH30YT"  displayname="CH30YT"  chinese="瑞士30年期">CH30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="CHRR"  enable="1"  dec="3"  own_code="CH1MT"  displayname="CH1MT"  chinese="瑞士1月期">CH1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CHRR"  enable="1"  dec="3"  own_code="CH3MT"  displayname="CH3MT"  chinese="瑞士3月期">CH3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CHRR"  enable="1"  dec="3"  own_code="CH6MT"  displayname="CH6MT"  chinese="瑞士6月期">CH6MT=RR</name>
+    </item>
+
+
+
+    <!--澳大利亚-->
+    <item>
+      <name mul="10000" market="AURR"  enable="1"  dec="3"  own_code="AU1YT"  displayname="AU1YT"  chinese="澳大利亚1年期">AU1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="AURR"  enable="1"  dec="3"  own_code="AU2YT"  displayname="AU2YT"  chinese="澳大利亚2年期">AU2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="AURR"  enable="1"  dec="3"  own_code="AU5YT"  displayname="AU5YT"  chinese="澳大利亚5年期">AU5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="AURR"  enable="1"  dec="3"  own_code="AU10YT"  displayname="AU10YT"  chinese="澳大利亚10年期">AU10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="AURR"  enable="1"  dec="3"  own_code="AU30YT"  displayname="AU30YT"  chinese="澳大利亚30年期">AU30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="AURR"  enable="1"  dec="3"  own_code="AU1MT"  displayname="AU1MT"  chinese="澳大利亚1月期">AU1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="AURR"  enable="1"  dec="3"  own_code="AU3MT"  displayname="AU3MT"  chinese="澳大利亚2月期">AU3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="AURR"  enable="1"  dec="3"  own_code="AU6MT"  displayname="AU6MT"  chinese="澳大利亚5月期">AU6MT=RR</name>
+    </item>
+
+
+
+    <!--加拿大-->
+    <item>
+      <name mul="10000" market="ACRR"  enable="1"  dec="3"  own_code="CA1YT"  displayname="CA1YT"  chinese="加拿大1年期">CA1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ACRR"  enable="1"  dec="3"  own_code="CA2YT"  displayname="CA2YT"  chinese="加拿大2年期">CA2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ACRR"  enable="1"  dec="3"  own_code="CA5YT"  displayname="CA5YT"  chinese="加拿大5年期">CA5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ACRR"  enable="1"  dec="3"  own_code="CA10YT"  displayname="CA10YT"  chinese="加拿大10年期">CA10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ACRR"  enable="1"  dec="3"  own_code="CA30YT"  displayname="CA30YT"  chinese="加拿大30年期">CA30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="ACRR"  enable="1"  dec="3"  own_code="CA1MT"  displayname="CA1MT"  chinese="加拿大1月期">CA1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ACRR"  enable="1"  dec="3"  own_code="CA3MT"  displayname="CA3MT"  chinese="加拿大3月期">CA2MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ACRR"  enable="1"  dec="3"  own_code="CA6MT"  displayname="CA6MT"  chinese="加拿大6月期">CA6MT=RR</name>
+    </item>
+
+    <!--新西兰-->
+    <item>
+      <name mul="10000" market="NZRR"  enable="1"  dec="3"  own_code="NZ1YT"  displayname="NZ1YT"  chinese="新西兰1年期">NZ1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="NZRR"  enable="1"  dec="3"  own_code="NZ2YT"  displayname="NZ2YT"  chinese="新西兰2年期">NZ2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="NZRR"  enable="1"  dec="3"  own_code="NZ5YT"  displayname="NZ5YT"  chinese="新西兰5年期">NZ5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="NZRR"  enable="1"  dec="3"  own_code="NZ10YT"  displayname="NZ10YT"  chinese="新西兰10年期">NZ10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="NZRR"  enable="1"  dec="3"  own_code="NZ30YT"  displayname="NZ30YT"  chinese="新西兰30年期">NZ30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="NZRR"  enable="1"  dec="3"  own_code="NZ1MT"  displayname="NZ1MT"  chinese="新西兰1月期">NZ1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="NZRR"  enable="1"  dec="3"  own_code="NZ3MT"  displayname="NZ3MT"  chinese="新西兰3月期">NZ3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="NZRR"  enable="1"  dec="3"  own_code="NZ6MT"  displayname="NZ6MT"  chinese="新西兰6月期">NZ6MT=RR</name>
+    </item>
+
+
+    <!--德国-->
+    <item>
+      <name mul="10000" market="DERR"  enable="1"  dec="3"  own_code="DE1YT"  displayname="DE1YT"  chinese="德国1年期">DE1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="DERR"  enable="1"  dec="3"  own_code="DE2YT"  displayname="DE2YT"  chinese="德国2年期">DE2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="DERR"  enable="1"  dec="3"  own_code="DE5YT"  displayname="DE5YT"  chinese="德国5年期">DE5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="DERR"  enable="1"  dec="3"  own_code="DE10YT"  displayname="DE10YT"  chinese="德国10年期">DE10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="DERR"  enable="1"  dec="3"  own_code="DE30YT"  displayname="DE30YT"  chinese="德国30年期">DE30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="DERR"  enable="1"  dec="3"  own_code="DE1MT"  displayname="DE1MT"  chinese="德国1月期">DE1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="DERR"  enable="1"  dec="3"  own_code="DE3MT"  displayname="DE3MT"  chinese="德国2月期">DE3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="DERR"  enable="1"  dec="3"  own_code="DE6MT"  displayname="DE6MT"  chinese="德国5月期">DE6MT=RR</name>
+    </item>
+
+
+    <!--葡萄牙-->
+    <item>
+      <name mul="10000" market="PTRR"  enable="1"  dec="3"  own_code="PT1YT"  displayname="PT1YT"  chinese="葡萄牙1年期">PT1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="PTRR"  enable="1"  dec="3"  own_code="PT2YT"  displayname="PT2YT"  chinese="葡萄牙2年期">PT2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="PTRR"  enable="1"  dec="3"  own_code="PT5YT"  displayname="PT5YT"  chinese="葡萄牙5年期">PT5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="PTRR"  enable="1"  dec="3"  own_code="PT10YT"  displayname="PT10YT"  chinese="葡萄牙10年期">PT10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="PTRR"  enable="1"  dec="3"  own_code="PT30YT"  displayname="PT30YT"  chinese="葡萄牙30年期">PT30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="PTRR"  enable="1"  dec="3"  own_code="PT1MT"  displayname="PT1MT"  chinese="葡萄牙1月期">PT1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="PTRR"  enable="1"  dec="3"  own_code="PT3MT"  displayname="PT3MT"  chinese="葡萄牙3月期">PT3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="PTRR"  enable="1"  dec="3"  own_code="PT6MT"  displayname="PT6MT"  chinese="葡萄牙6月期">PT6MT=RR</name>
+    </item>
+
+
+
+    <!--西班牙-->
+    <item>
+      <name mul="10000" market="ESRR"  enable="1"  dec="3"  own_code="ES1YT"  displayname="ES1YT"  chinese="西班牙1年期">ES1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ESRR"  enable="1"  dec="3"  own_code="ES2YT"  displayname="ES2YT"  chinese="西班牙2年期">ES2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ESRR"  enable="1"  dec="3"  own_code="ES5YT"  displayname="ES5YT"  chinese="西班牙5年期">ES5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ESRR"  enable="1"  dec="3"  own_code="ES10YT"  displayname="ES10YT"  chinese="西班牙10年期">ES10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ESRR"  enable="1"  dec="3"  own_code="ES30YT"  displayname="ES30YT"  chinese="西班牙30年期">ES30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="ESRR"  enable="1"  dec="3"  own_code="ES1MT"  displayname="ES1MT"  chinese="西班牙1月期">ES1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ESRR"  enable="1"  dec="3"  own_code="ES3MT"  displayname="ES3MT"  chinese="西班牙3月期">ES3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ESRR"  enable="1"  dec="3"  own_code="ES6MT"  displayname="ES6MT"  chinese="西班牙5月期">ES6MT=RR</name>
+    </item>
+
+
+    <!--意大利-->
+    <item>
+      <name mul="10000" market="ITRR"  enable="1"  dec="3"  own_code="IT1YT"  displayname="IT1YT"  chinese="意大利1年期">IT1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ITRR"  enable="1"  dec="3"  own_code="IT2YT"  displayname="IT2YT"  chinese="意大利2年期">IT2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ITRR"  enable="1"  dec="3"  own_code="IT5YT"  displayname="IT5YT"  chinese="意大利5年期">IT5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ITRR"  enable="1"  dec="3"  own_code="IT10YT"  displayname="IT10YT"  chinese="意大利10年期">IT10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ITRR"  enable="1"  dec="3"  own_code="IT30YT"  displayname="IT30YT"  chinese="意大利30年期">IT30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="ITRR"  enable="1"  dec="3"  own_code="IT1MT"  displayname="IT1MT"  chinese="意大利1月期">IT1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ITRR"  enable="1"  dec="3"  own_code="IT3MT"  displayname="IT3MT"  chinese="意大利3月期">IT3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="ITRR"  enable="1"  dec="3"  own_code="IT6MT"  displayname="IT6MT"  chinese="意大利6月期">IT6MT=RR</name>
+    </item>
+
+
+    <!--法国-->
+    <item>
+      <name mul="10000" market="FRRR"  enable="1"  dec="3"  own_code="FR1YT"  displayname="FR1YT"  chinese="法国1年期">FR1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="FRRR"  enable="1"  dec="3"  own_code="FR2YT"  displayname="FR2YT"  chinese="法国2年期">FR2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="FRRR"  enable="1"  dec="3"  own_code="FR5YT"  displayname="FR5YT"  chinese="法国5年期">FR5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="FRRR"  enable="1"  dec="3"  own_code="FR10YT"  displayname="FR10YT"  chinese="法国10年期">FR10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="FRRR"  enable="1"  dec="3"  own_code="FR30YT"  displayname="FR30YT"  chinese="法国30年期">FR30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="FRRR"  enable="1"  dec="3"  own_code="FR1MT"  displayname="FR1MT"  chinese="法国1月期">FR1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="FRRR"  enable="1"  dec="3"  own_code="FR3MT"  displayname="FR3MT"  chinese="法国3月期">FR3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="FRRR"  enable="1"  dec="3"  own_code="FR6MT"  displayname="FR6MT"  chinese="法国6月期">FR6MT=RR</name>
+    </item>
+
+
+    <!--中国-->
+    <item>
+      <name mul="10000" market="CNRR"  enable="1"  dec="3"  own_code="CN1YT"  displayname="CN1YT"  chinese="中国1年期">CN1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CNRR"  enable="1"  dec="3"  own_code="CN2YT"  displayname="CN2YT"  chinese="中国2年期">CN2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CNRR"  enable="1"  dec="3"  own_code="CN5YT"  displayname="CN5YT"  chinese="中国5年期">CN5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CNRR"  enable="1"  dec="3"  own_code="CN10YT"  displayname="CN10YT"  chinese="中国10年期">CN10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CNRR"  enable="1"  dec="3"  own_code="CN30YT"  displayname="CN30YT"  chinese="中国30年期">CN30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="CNRR"  enable="1"  dec="3"  own_code="CN1MT"  displayname="CN1MT"  chinese="中国1月期">CN1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CNRR"  enable="1"  dec="3"  own_code="CN3MT"  displayname="CN3MT"  chinese="中国3月期">CN3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="CNRR"  enable="1"  dec="3"  own_code="CN6MT"  displayname="CN6MT"  chinese="中国6月期">CN6MT=RR</name>
+    </item>
+
+
+
+    <!--英镑-->
+    <item>
+      <name mul="10000" market="GBRR"  enable="1"  dec="3"  own_code="GB1YT"  displayname="GB1YT"  chinese="英镑1年期">GB1YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="GBRR"  enable="1"  dec="3"  own_code="GB2YT"  displayname="GB2YT"  chinese="英镑2年期">GB2YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="GBRR"  enable="1"  dec="3"  own_code="GB5YT"  displayname="GB5YT"  chinese="英镑5年期">GB5YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="GBRR"  enable="1"  dec="3"  own_code="GB10YT"  displayname="GB10YT"  chinese="英镑10年期">GB10YT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="GBRR"  enable="1"  dec="3"  own_code="GB30YT"  displayname="GB30YT"  chinese="英镑30年期">GB30YT=RR</name>
+    </item>
+
+    <item>
+      <name mul="10000" market="GBRR"  enable="1"  dec="3"  own_code="GB1MT"  displayname="GB1MT"  chinese="英镑1月期">GB1MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="GBRR"  enable="1"  dec="3"  own_code="GB3MT"  displayname="GB3MT"  chinese="英镑3月期">GB3MT=RR</name>
+    </item>
+    <item>
+      <name mul="10000" market="GBRR"  enable="1"  dec="3"  own_code="GB6MT"  displayname="GB6MT"  chinese="英镑6月期">GB6MT=RR</name>
+    </item>
+
+    <!--end各国国债收益率代码-->
+
+    <!--南交所-->
+    <item>
+      <name mul="10000" market="CSRPME"  enable="1"  dec="3"  own_code="C@AG"  displayname="C@AG"  chinese="白银">C@AG</name>
+    </item>
+    <item>
+      <name mul="10000" market="CSRPME"  enable="1"  dec="3"  own_code="C@BI"  displayname="C@BI"  chinese="铋">C@BI</name>
+    </item>
+    <item>
+      <name mul="10000" market="CSRPME"  enable="1"  dec="3"  own_code="C@IN"  displayname="C@IN"  chinese="铟">C@IN</name>
+    </item>
+    <item>
+      <name mul="10000" market="CSRPME"  enable="1"  dec="3"  own_code="C@TE"  displayname="C@TE"  chinese="碲">C@TE</name>
+    </item>
+    <item>
+      <name mul="10000" market="CSRPME"  enable="1"  dec="3"  own_code="C@SN"  displayname="C@SN"  chinese="锡">C@SN</name>
+    </item>
+    <item>
+      <name mul="10000" market="CSRPME"  enable="1"  dec="3"  own_code="C@SB"  displayname="C@SB"  chinese="锑">C@SB</name>
+    </item>
+    <item>
+      <name mul="10000" market="CSRPME"  enable="1"  dec="3"  own_code="C@W"  displayname="C@W"  chinese="钨条">C@W</name>
+    </item>
+    <item>
+      <name mul="10000" market="CSRPME"  enable="1"  dec="3"  own_code="C@ZS"  displayname="C@ZS"  chinese="南交指数">C@ZS</name>
+    </item>
+    <!--end南交所-->
+
+    <!--MT4-->
+    <item>
+      <name mul="100000" market="INDEX_USD"  enable="1"  dec="3"  own_code="M@USD"     displayname="M@USD"       chinese="美元指数"  >M@USD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@USDCNY"  displayname="M@USDCNY"    chinese="美元人民币">M@USDCNY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@AUDUSD"  displayname="M@AUDUSD"    chinese="澳元美元"  >M@AUDUSD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@EURUSD"  displayname="M@EURUSD"    chinese="欧元美元"  >M@EURUSD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@GBPUSD"  displayname="M@GBPUSD"    chinese="英镑美元"  >M@GBPUSD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@NZDUSD"  displayname="M@NZDUSD"    chinese="纽元美元"  >M@NZDUSD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@USDCAD"  displayname="M@USDCAD"    chinese="美元加元"  >M@USDCAD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@USDCHF"  displayname="M@USDCHF"    chinese="美元瑞郎"  >M@USDCHF</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@USDHKD"  displayname="M@USDHKD"    chinese="美元港元"  >M@USDHKD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@USDJPY"  displayname="M@USDJPY"    chinese="美元日元"  >M@USDJPY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@USDMYR"  displayname="M@USDMYR"    chinese="美元马币"  >M@USDMYR</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@USDSGD"  displayname="M@USDSGD"    chinese="美元新元"  >M@USDSGD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@USDTWD"  displayname="M@USDTWD"    chinese="美元台币"  >M@USDTWD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@AUDCAD"  displayname="M@AUDCAD"    chinese="澳元加元"  >M@AUDCAD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@AUDEUR"  displayname="M@AUDEUR"    chinese="澳元欧元"  >M@AUDEUR</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@AUDHKD"  displayname="M@AUDHKD"    chinese="澳元港元"  >M@AUDHKD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@AUDCHF"  displayname="M@AUDCHF"    chinese="澳元瑞郎"  >M@AUDCHF</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@AUDGBP"  displayname="M@AUDGBP"    chinese="澳元英镑"  >M@AUDGBP</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@AUDJPY"  displayname="M@AUDJPY"    chinese="澳元日元"  >M@AUDJPY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CADAUD"  displayname="M@CADAUD"    chinese="加元澳元"  >M@CADAUD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CADEUR"  displayname="M@CADEUR"    chinese="加元欧元"  >M@CADEUR</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CADHKD"  displayname="M@CADHKD"    chinese="加元港元"  >M@CADHKD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CADCHF"  displayname="M@CADCHF"    chinese="加元瑞郎"  >M@CADCHF</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CADGBP"  displayname="M@CADGBP"    chinese="加元英镑"  >M@CADGBP</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CADJPY"  displayname="M@CADJPY"    chinese="加元日元"  >M@CADJPY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@EURAUD"  displayname="M@EURAUD"    chinese="欧元澳元"  >M@EURAUD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@EURCAD"  displayname="M@EURCAD"    chinese="欧元加元"  >M@EURCAD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@EURHKD"  displayname="M@EURHKD"    chinese="欧元港元"  >M@EURHKD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@EURCHF"  displayname="M@EURCHF"    chinese="欧元瑞郎"  >M@EURCHF</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@EURGBP"  displayname="M@EURGBP"    chinese="欧元英镑"  >M@EURGBP</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@EURJPY"  displayname="M@EURJPY"    chinese="欧元日元"  >M@EURJPY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@HKDAUD"  displayname="M@HKDAUD"    chinese="港元澳元"  >M@HKDAUD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@HKDCAD"  displayname="M@HKDCAD"    chinese="港元加元"  >M@HKDCAD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@HKDEUR"  displayname="M@HKDEUR"    chinese="港元欧元"  >M@HKDEUR</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@HKDCHF"  displayname="M@HKDCHF"    chinese="港元瑞郎"  >M@HKDCHF</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@HKDGBP"  displayname="M@HKDGBP"    chinese="港元英镑"  >M@HKDGBP</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@HKDJPY"  displayname="M@HKDJPY"    chinese="港元加元"  >M@HKDJPY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CHFAUD"  displayname="M@CHFAUD"    chinese="瑞郎澳元"  >M@CHFAUD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CHFCAD"  displayname="M@CHFCAD"    chinese="瑞郎加元"  >M@CHFCAD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CHFEUR"  displayname="M@CHFEUR"    chinese="瑞郎欧元"  >M@CHFEUR</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CHFHKD"  displayname="M@CHFHKD"    chinese="瑞郎港元"  >M@CHFHKD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CHFGBP"  displayname="M@CHFGBP"    chinese="瑞郎英镑"  >M@CHFGBP</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CHFJPY"  displayname="M@CHFJPY"    chinese="瑞郎日元"  >M@CHFJPY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@GBPAUD"  displayname="M@GBPAUD"    chinese="英镑澳元"  >M@GBPAUD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@GBPCAD"  displayname="M@GBPCAD"    chinese="英镑澳元"  >M@GBPCAD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@GBPEUR"  displayname="M@GBPEUR"    chinese="英镑欧元"  >M@GBPEUR</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@GBPCHF"  displayname="M@GBPCHF"    chinese="英镑瑞郎"  >M@GBPCHF</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@GBPHKD"  displayname="M@GBPHKD"    chinese="英镑港元"  >M@GBPHKD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@GBPJPY"  displayname="M@GBPJPY"    chinese="英镑日元"  >M@GBPJPY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@USDMOP"  displayname="M@USDMOP"    chinese="美元澳门元">M@USDMOP</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@AUDNZD"  displayname="M@AUDNZD"    chinese="澳元纽元"  >M@AUDNZD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@EURNZD"  displayname="M@EURNZD"    chinese="欧元纽元"  >M@EURNZD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@GBPNZD"  displayname="M@GBPNZD"    chinese="英镑纽元"  >M@GBPNZD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@GBPCNY"  displayname="M@GBPCNY"    chinese="英镑人民币">M@GBPCNY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CNYJPY"  displayname="M@CNYJPY"    chinese="人民币日元">M@CNYJPY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@EURCNY"  displayname="M@EURCNY"    chinese="欧元人民币">M@EURCNY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CHFCNY"  displayname="M@CHFCNY"    chinese="瑞郎人民币">M@CHFCNY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@SGDCNY"  displayname="M@SGDCNY"    chinese="新元人民币">M@SGDCNY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CADCNY"  displayname="M@CADCNY"    chinese="加元人民币">M@CADCNY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@HKDCNY"  displayname="M@HKDCNY"    chinese="港元人民币">M@HKDCNY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@AUDCNY"  displayname="M@AUDCNY"    chinese="澳元人民币">M@AUDCNY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@NZDCNY"  displayname="M@NZDCNY"    chinese="纽元人民币">M@NZDCNY</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@CADNZD"  displayname="M@CADNZD"    chinese="加元纽元"  >M@CADNZD</name>
+    </item>
+    <item>
+      <name mul="100000" market="EROF"  enable="1"  dec="5"  own_code="M@TWDCNY"  displayname="M@TWDCNY"    chinese="台币人民币">M@TWDCNY</name>
+    </item>
+    <!--endEROF-->
+
+
+
+
+  </request>
+</rmds>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+			http://www.springframework.org/schema/tx
+			http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+			http://www.springframework.org/schema/cache
+			http://www.springframework.org/schema/cache/spring-cache-3.0.xsd">
+	   <!-- 引用ehCache的配置 -->
+	 <bean id="defaultCacheManager"
+	  class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		  <property name="configLocation">
+		   <value>classpath:ehcache.xml</value>
+		  </property>
+	 </bean>
+	 
+ <!-- 定义ehCache的工厂，并设置所使用的Cache name -->
+	 <bean id="ehCache"
+	  class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		  <property name="cacheManager">
+		   <ref bean="defaultCacheManager" />
+		  </property>
+		  <property name="cacheName">
+		   <value>middle_cache</value>
+		  </property>
+	 </bean>
+
+ <!-- find/create cache拦截器 -->
+	 <bean id="methodCacheInterceptor"
+		  class="com.wm927.interceptor.MethodCacheInterceptor">
+		  <property name="cache">
+		   <ref bean="ehCache" />
+		  </property>
+	 </bean>
+ <!-- flush cache拦截器 -->
+	 <bean id="methodCacheAfterAdvice"
+	  class="com.wm927.interceptor.MethodCacheAfterAdvice">
+		  <property name="cache">
+		   <ref bean="ehCache" />
+		  </property>
+	 </bean>
+
+	 <bean id="methodCachePointCut"
+	  class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+		  <property name="advice">
+		   <ref bean="methodCacheInterceptor" />
+		  </property>
+		  <property name="patterns">
+		   <list>
+		    <value>.*find.*</value>
+		   </list>
+		  </property>
+	 </bean>
+	 <bean id="methodCachePointCutAdvice"
+	  class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+	  <property name="advice">
+	   <ref bean="methodCacheAfterAdvice" />
+	  </property>
+	  <property name="patterns">
+	   <list>
+	    <value>.*update.*</value>
+	    <value>.*batch.*</value>
+	   </list>
+	  </property>
+	 </bean>
+	
+	<!-- 创建事务通知 -->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"> 
+     <!-- 要拦截的类 -->
+      <property name="beanNames">  
+          <value>*Service</value>
+      </property>  
+      <property name="interceptorNames">  
+        <list>  
+          <value>methodCachePointCut</value>  
+          <value>methodCachePointCutAdvice</value>  
+        </list>  
+      </property>  
+    </bean> 
+</beans>
